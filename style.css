@@ -1,0 +1,176 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+/* Pre-set colors and sizes */
+:root{
+  --bg-color: #f2e9e4;
+  --main-color: #4a4e69;
+  --top-color: #c9ada7;
+  --points-color: #22223B;
+  --xo-color: #9A8C98;
+  --box-size: 120px;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: 'Varela Round', sans-serif;
+}
+
+h1{
+  color: var(--main-color);
+  font-size: 38px;
+}
+
+/* Game header and game settings buttons container */
+.top_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  color: var(--top-color);
+}
+
+/* Game settings buttons */
+.container_btns{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container_btns i{
+  margin: 10px;
+  font-size: 21px;
+}
+
+.container_btns i:hover{
+  cursor: pointer;
+}
+
+#oneP{
+  display: none;
+}
+
+.gameboard{
+  width: 400px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--box-size);
+  width: var(--box-size);
+  border-right: solid 2px var(--main-color);
+  border-bottom: solid 2px var(--main-color);
+  color: var(--xo-color);
+  font-size: 5.2em;
+}
+/* removes right border for boxes on the right */
+.box:nth-child(3n) {
+    border-right: none;
+}
+/* removes bottom border for boxes on the bottom */
+.box:nth-child(6) ~ .box {
+    border-bottom: none;
+}
+
+.box:hover{
+  cursor: pointer;
+}
+
+#start-new-round{ /* div covers gameboard when a round ends to prevent further clicks (until next round) */
+  position: absolute;
+  display: none;
+  top: 0;
+  width: 400px;
+  height: 368px;
+  /* background-color: pink; */
+}
+
+#start-new-round:hover{
+  cursor: pointer;
+}
+
+#block-human-player{ /* div covers gameboard when it's computer's turn to prevent user from clicking */
+  position: absolute;
+  display: none;
+  top: 0;
+  width: 400px;
+  height: 368px;
+  opacity: 0;
+  background-color: blue;
+}
+
+#block-human-player:hover{
+  cursor: pointer;
+}
+.bottom_container{
+  display: block; 
+  margin: 0 auto;
+  color: var(--points-color);
+}
+
+.bottom_container div{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.points_labels p{
+  font-size: 20px;
+  text-align: center;
+  line-height: 6px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+.points_display p{
+  font-size: 18px;
+  text-align: center;
+  line-height: 0px;
+  margin-left: 65px;
+  margin-right: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Mobile screen view */
+@media screen and (max-width: 400px) {  
+  h1{
+    margin-left: 14%;
+    font-size: 38px;
+  }
+
+  .container_btns{
+    margin-left: 26px;
+  }
+  
+  .container_btns i{
+    margin: 5px;
+    margin-left: 10px;
+    font-size: 20px;
+  }
+
+  .points_labels{
+    margin-left: 11%;
+  }
+  .points_display{
+    margin-left: 6%;
+  }
+
+  .points_labels p{
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .points_display p{
+    margin-left: 60px;
+    margin-right: 35px;
+  }
+}
