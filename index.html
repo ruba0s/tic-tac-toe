@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Tic Tac Toe</title>
+  <link rel = "icon" href = "XO.png" type = "image/x-icon">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/6ffaf301af.js" crossorigin="anonymous"></script>
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Game header and control button elements -->
+  <div class="top_container">
+    <h1 id="game_header"> Tic Tac Toe </h1>
+    <!-- players icons: -->
+    <div class="container_btns"> 
+      <section id="players_btn">
+        <i class="fa-solid fa-user fa-lg" id="oneP"> 1P </i>
+        <i class="fa-solid fa-user-group fa-xl" id="twoP"> 2P </i>  
+      </section>
+      <i class="fa-solid fa-palette fa-lg"> Theme </i>
+      <i class="fa-solid fa-arrow-rotate-left"> Restart </i>
+    </div>
+  </div>
+
+  <!-- Gameboard grid -->
+  <div class="gameboard">
+    <div class="box" id="0"> </div>
+    <div class="box" id="1"> </div>
+    <div class="box" id="2"> </div>
+    <div class="box" id="3"> </div>
+    <div class="box" id="4"> </div>
+    <div class="box" id="5"> </div>
+    <div class="box" id="6"> </div>
+    <div class="box" id="7"> </div>
+    <div class="box" id="8"> </div>
+    <div id="start-new-round"></div>
+    <div id="block-human-player"></div>
+  </div>
+
+  <!-- Game scores -->
+  <div class="bottom_container">
+    <div class="points_labels">
+      <p> player X </p>
+      <p> player O </p>
+      <p> tie </p>
+    </div>
+    <div class="points_display">
+      <p id="player1_points"> 0 </p>
+      <p id="player2_points"> 0 </p>
+      <p id="tied_points"> 0 </p>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+  <script src="singlePlayer.js"></script>
+
+</body>
+
+</html>
